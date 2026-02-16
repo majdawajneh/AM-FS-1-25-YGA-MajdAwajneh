@@ -75,39 +75,22 @@ window.onscroll = function(){
 
 window.onscroll = function fixednavbar(){
     let navbar = document.querySelector(".fixed-top");
-    if(window.scrollY >= 300){
+    if(window.scrollY >= 300 && window.scrollY < 2000){
         navbar.style.backgroundColor = "var(--dusty-Blue-color)";   
+        document.querySelector(".nav-link").style.color = "white";
+    }else if(window.scrollY >= 2000 && window.scrollY < 2900){
+        navbar.style.backgroundColor = "var(--Buttercream-color)";
+        document.querySelector(".nav-link").style.color = "var(--dusty-Blue-color)";
+        this.document.querySelector(".nav-link:hover").style.color = "var(--dusty-Blue-color)";
+    }else if(window.scrollY >= 2900){
+        navbar.style.backgroundColor = "var(--dusty-Blue-color)";
+        document.querySelector(".nav-link").style.color = "white";
     }else{
         navbar.style.backgroundColor = "transparent";
     }
 
 };
-let btn = document.getElementById("landbtn");
-let output = document.getElementById("output");
-let landvid = document.querySelector(".landing");
-function getdata(){
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            
-            if(btn.clicked === true){
-                resolve(output.textContent = "Button Clicked Successfully", output.style.color="green");
-            }else{
-                reject(output.textContent = "Button Not Clicked");
-            }
-            
-        }, 500);
-    });
-}
 
-btn.addEventListener("click",async()=>{
-    try{
-        btn.clicked = true;
-        let result = await getdata();
-        console.log(result);
-    }catch(error){
-        console.log("button not clicked");
-    }
-});
 
 // let tryp = new Promise((resolve,reject)=>{
 //     setTimeout(() => {

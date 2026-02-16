@@ -256,33 +256,22 @@ body{
     transform: rotate(360deg);
   }
 }
-@keyframes flip-1 {
-    from{
-        transform: scaleX(0deg);
-    }
-    to{
-        transform: scaleX(200deg);
-    }
-}
 .techs img{
     height: 120px;
     width: 120px;
     transition: filter 300ms;
 }
 .techs .row .col-lg-2:nth-child(1) img {
-  animation: lan-img-spin infinite 15s linear;
+    animation: lan-img-spin infinite 15s linear;
 }
 .techs .row .col-lg-2:nth-child(3) img {
-  animation: flip-1 infinite 15s linear;
-}
+    animation: lan-img-spin infinite 15s linear;}
 .techs .row .col-lg-2:nth-child(5) img {
-  animation: lan-img-spin infinite 15s linear;
-  animation-delay: 2s;
+    animation: lan-img-spin infinite 20s linear;
 }
 .techs img:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+    filter: drop-shadow(0 0 2em #646cffaa);
 }
-
 
 
     /* ==== end techs ====  */   
