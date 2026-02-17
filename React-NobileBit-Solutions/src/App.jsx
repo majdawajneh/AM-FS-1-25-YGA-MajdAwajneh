@@ -1,39 +1,27 @@
-import './App.css'
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap/dist/css/bootstrap.min.css"
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Header from './Header'
-import Landing from './Landing'
-import Features from './Features'
-import Gallery from './Gallery'
-import Stuff from './Stuff'
-import Team from './Team'
-import Techs from './Techs'
-import Pricing from './Pricing'
-import OurClients from './OurClients'
-import FAQ from './FAQ'
-import Footer from './Footer'
-
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+import Home from "./Pages/Home.jsx";
+import About from "./Pages/About.jsx";
+import Profile from "./Pages/Profile.jsx";
+import NotFound from "./Pages/NotFound.jsx";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Landing />
-      <Features />
-      <Gallery />
-      <Stuff />
-      <Team />
-      <Techs />
-      <Pricing />
-      <OurClients />
-      <FAQ />
-      <Footer />
+return (
+<div>
+<Navbar />
 
+      <div style={{ padding: "20px" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
+
+          {/* This route matches any unknown URL */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </div>
-
-  );
-
+);
 }
 
-export default App
+export default App;
