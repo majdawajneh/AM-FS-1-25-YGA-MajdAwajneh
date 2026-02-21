@@ -73,43 +73,36 @@ window.onscroll = function(){
     }
 };
 
-window.onscroll = function fixednavbar(){
-    let navbar = document.querySelector(".fixed-top");
-    if(window.scrollY >= 300 && window.scrollY < 2000){
-        navbar.style.backgroundColor = "var(--dusty-Blue-color)";   
-        document.querySelector(".nav-link").style.color = "white";
-    }else if(window.scrollY >= 2000 && window.scrollY < 2900){
-        navbar.style.backgroundColor = "var(--Buttercream-color)";
-        document.querySelector(".nav-link").style.color = "var(--dusty-Blue-color)";
-        this.document.querySelector(".nav-link:hover").style.color = "var(--dusty-Blue-color)";
-    }else if(window.scrollY >= 2900){
-        navbar.style.backgroundColor = "var(--dusty-Blue-color)";
-        document.querySelector(".nav-link").style.color = "white";
-    }else{
-        navbar.style.backgroundColor = "transparent";
+window.onscroll = function fixednavbar() {
+    const navbar = document.querySelector(".fixed-top");
+    const scrollY = window.scrollY;
+    
+    // تحديد اللون بناءً على position التمرير
+    let bgColor, textColor;
+    
+    if (scrollY >= 2900) {
+        bgColor = "var(--dusty-Blue-color)";
+        textColor = "white";
+    } else if (scrollY >= 2000) {
+        bgColor = "var(--Buttercream-color)";
+        textColor = "var(--dusty-Blue-color)";
+    } else if (scrollY >= 300) {
+        bgColor = "var(--dusty-Blue-color)";
+        textColor = "white";
+    } else {
+        bgColor = "transparent";
+        textColor = "white";
     }
-
+    
+    // تطبيق الألوان
+    navbar.style.backgroundColor = bgColor;
+    document.querySelector(".navbar-brand-name").style.color = textColor;
+    
+    // تغيير لون جميع روابط القائمة
+    const navLinks = ["home", "aboutus", "pric", "blog", "serv", "galle", "ourclients", "FAQ", "contact"];
+    navLinks.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.style.color = textColor;
+    });
 };
 
-
-// let tryp = new Promise((resolve,reject)=>{
-//     setTimeout(() => {
-//         window.onscroll = function(){
-//             let galio = document.querySelectorAll(".galio");
-//             let galio2 = document.querySelectorAll(".galio2");
-//             galio.forEach((ele) => {
-//                 if(window.scrollY >= ele.offsetTop - 100){
-//                     resolve(ele.style.transform = "rotate(360deg)", ele.style.transition = "0.8s");
-//                 }else{
-//                     reject(ele.style.transform = "rotate(0deg)", ele.style.transition = "0.3s");
-//                 }          
-//             });
-//             galio2.forEach((ele) => {
-//                 if(window.scrollY >= ele.offsetTop - 100){
-//                     resolve(ele.style.transform = "rotate(360deg)", ele.style.transition = "0.8s");
-//                 }else{
-//                     reject(ele.style.transform = "rotate(0deg)", ele.style.transition = "0.3s");
-//                 }
-//             });
-//     }, 1000});
-// });

@@ -13,6 +13,10 @@
 }
 body{
     font-family: "Poppins", sans-serif;
+    width: 100%;
+}
+body {
+    background-color: red !important;
 }
 
 .navbar{
@@ -53,7 +57,7 @@ body{
 
 .landing{
     background-color: var(--midnight-blue-color);
-    height: calc(110vh - 96px);
+    height: calc(110vh - 98px);
     background: transparent;
 }
 .landing h1{
