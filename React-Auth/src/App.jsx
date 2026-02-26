@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Profile from './Pages/Profile'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import ProtectedRoute from './components/ProtectedRoute'
 
