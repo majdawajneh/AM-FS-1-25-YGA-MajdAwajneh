@@ -25,20 +25,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <header className="bg-gray-800 text-white p-4 text-center">
-          <nav>
+      <header className="bg-gray-200 text-gray-800 p-4 text-center">
+          <nav >
             <ul className="flex justify-center space-x-4 gap-5">
-              <li><Link className="hover:underline" href="/">Home</Link></li>
-              <li><Link className="hover:underline" href="/about">About</Link></li>
-              <li><Link className="hover:underline" href="/services">Services</Link></li>
-              <li><Link className="hover:underline" href="/contact">Contact</Link></li>
+              <li><Link className="hover:text-blue-400" href="/">Home</Link></li>
+              <li><Link className="hover:text-blue-400" href="/about">About</Link></li>
+              <li><Link className="hover:text-blue-400" href="/services">Services</Link></li>
+              <li><Link className="hover:text-blue-400" href="/contact">Contact</Link></li>
             </ul>
           </nav>
       </header>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-gray-100 min-h-screen`}>
         {children}
       </body>
-      <footer className="text-center py-4">
+      <footer className="text-center py-4 bottom-0 w-full bg-gray-200">
         <p className="text-sm text-gray-500">
           &copy; {new Date().getFullYear()} My Next.js App. All rights reserved.
         </p>
