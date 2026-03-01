@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,15 +26,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <header className="bg-gray-800 text-white p-4 text-center">
-          <h1>My Next.js App</h1>
+          <nav>
+            <ul className="flex justify-center space-x-4 gap-5">
+              <li><Link className="hover:underline" href="/">Home</Link></li>
+              <li><Link className="hover:underline" href="/about">About</Link></li>
+              <li><Link className="hover:underline" href="/services">Services</Link></li>
+              <li><Link className="hover:underline" href="/contact">Contact</Link></li>
+            </ul>
+          </nav>
       </header>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-gray-100 min-h-screen`}>
         {children}
       </body>
       <footer className="text-center py-4">
-          <p>&copy; 2024 My Next.js App. All rights reserved.</p>
+        <p className="text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} My Next.js App. All rights reserved.
+        </p>
+        <p className="text-sm text-gray-500">
+          Built with Next.js and Tailwind CSS.
+        </p>
       </footer>
     </html>
   );

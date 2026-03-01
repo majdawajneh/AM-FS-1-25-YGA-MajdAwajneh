@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return (
-        <div>
-            <h1>About Page</h1>
+        <div className="container mx-auto px-4 py-8 text-lg">
+            <h1 className="text-3xl font-bold">About Page</h1>
         </div>
     );
 }
