@@ -1,16 +1,36 @@
 import Link from "next/link";
+import  "../assets/CSS/Contact.css";
 
 export default function ContactPage() {
     return (
-        <div className="container mx-auto px-4 py-8 text-lg">
-            <div className="bg-blue-100 p-6 rounded-lg shadow-md text-blue-800">
-                <h1 className="text-3xl font-bold text-center">Contact Page📞</h1>
-                <p className="mt-4">Welcome to our Contact Page! Feel free to reach out to us.</p>
-                <input type="text" placeholder="Enter your name" className="border border-gray-300 rounded px-4 py-4 mt-4 w-full mb-4" />
-                <input type="email" placeholder="Enter your email" className="border border-gray-300 rounded px-4 py-2 mt-4 w-full mb-4" />
-                <textarea placeholder="Enter your message" className="border border-gray-300 rounded px-4 py-2 mt-4 w-full h-32"></textarea>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 cursor-pointer">Send Message</button>
-            </div>
+
+        <div className="contact-form pt-3">
+        <div className="container">
+            <h2 className="text-center mb-4 pt-5 pb-2">Get in Touch</h2>
+            <p className="text-center">We'd love to hear from you! Please fill out the form below and We'll get back to you as soon as possible.</p>
+            <form action="" method="get" className="col-md-6 col-lg-4 m-5 mt-3 " id="contact-form" noValidate>
+                <div className="mb-1">
+                    <label htmlFor="firstname" className="form-label p-4">First Name</label>
+                    <input type="text" className="form-control mb-2" id="firstname" placeholder="Enter your FirstName" required/>
+                    <div className="error" id="fname-error"></div>
+                </div>
+                <div className="mb-1">
+                    <label htmlFor="lastname" className="form-label p-4">Last Name</label>
+                    <input type="text" className="form-control" id="lastname" placeholder="Enter your LastName" required/>
+                    <div className="error" id="lname-error"></div>
+                </div>
+                <div className="mb-1">
+                    <label htmlFor="email" className="form-label p-4">Email</label>
+                    <input type="email" className="form-control" id="email" placeholder="Enter your email" required/>
+                    <div className="error" id="email-error"></div>
+                </div>
+                <div className="mb-3 w-100">
+                    <label htmlFor="message" className="form-label p-4">Message</label>
+                    <textarea className="form-control" id="message"  placeholder="We'd love to hear from you!" autoComplete="off" required></textarea>
+                </div>
+                <button type="submit" className="btn" id="submit">Submit</button>
+            </form>
+        </div>
         </div>
     );
 }

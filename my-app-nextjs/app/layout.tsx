@@ -25,15 +25,47 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <header className="bg-gray-200 text-gray-800 p-4 text-center">
-          <nav >
-            <ul className="flex justify-center space-x-4 gap-5">
-              <li><Link className="hover:text-blue-400" href="/">Home</Link></li>
-              <li><Link className="hover:text-blue-400" href="/about">About</Link></li>
-              <li><Link className="hover:text-blue-400" href="/services">Services</Link></li>
-              <li><Link className="hover:text-blue-400" href="/contact">Contact</Link></li>
-            </ul>
-          </nav>
+      <header className="bg-blue-400 text-gray-800 p-4 text-center">
+          <nav className="navbar navbar-expand-lg fixed-top pt-3 pb-3">
+            <div className="container">
+                <Link href="/" className="navbar-brand-name text-decoration-none">NobleBit-Solutions</Link>
+                <button 
+                    className="navbar-toggler" 
+                    type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#main" aria-controls="main" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                    <i className="fa-solid fa-bars"></i>
+                </button>
+
+                <div className="collapse navbar-collapse text-black text-center" id="main">
+                  <ul className="navbar-nav ms-auto mb-2 mb-lg-0 text-black" id="main">
+                  <li className="nav-item cursor-pointer">
+                    <Link href="/" className="nav-link p-2 p-lg-3 active">Home</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/about" className="nav-link p-2 p-lg-3">AboutUs</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/services" className="nav-link p-2 p-lg-3">Services</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/blog" className="nav-link p-2 p-lg-3">Our Blog</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/gallery" className="nav-link p-2 p-lg-3">Gallery</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/pricing" className="nav-link p-2 p-lg-3">Pricing</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/clients" className="nav-link p-2 p-lg-3">Our Clients</Link>
+                  </li>
+                </ul>
+                </div>
+                
+            </div>
+        </nav>
       </header>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-gray-100 min-h-screen`}>
         {children}
