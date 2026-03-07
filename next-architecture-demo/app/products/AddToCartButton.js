@@ -7,5 +7,6 @@ export default function AddToCartButton({product}){
         <button onClick={() => addItem(product)}>
             Add Item To Products
         </button>
+        
     )
 }

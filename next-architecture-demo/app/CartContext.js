@@ -1,7 +1,8 @@
 "use client";
-import { createContext, use, useContext, useMemo, useState} from "react";
+// عشان يجيبلنا كل مكتبات الرياضيات MEMOاستخدمنا ال
+import { createContext, useContext, useMemo, useState} from "react";
 
-const CartContext = createContext(null);
+const CartContext = createContext(null); //اعطيناه Null هون عشان يقبل اذا كان في اشي Null
 
 export function CartProvider({children}){
     const [Items , setItems] = useState([]);
@@ -22,7 +23,8 @@ export function CartProvider({children}){
         setItems([])
     }
 
-    const value = useMemo(() => ({Items, addToCart, clear}),[Items]);
+    const value = useMemo(() => {Items, addToCart, clear}, [Items]);
+    return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
 
 export function useCart(){
