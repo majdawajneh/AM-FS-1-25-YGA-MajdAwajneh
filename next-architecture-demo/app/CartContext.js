@@ -20,15 +20,14 @@ export function CartProvider({children}){
     }
 
     function clear(){
-        setItems([])
+        setItems([]);
     }
 
-    const value = useMemo(() => {Items, addToCart, clear}, [Items]);
+    const value = useMemo(() => ({Items, addToCart, clear}), [Items]);
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
 
 export function useCart(){
     const ctx = useContext(CartContext);
-    if(!ctx)throw new Error("useCart must be used within a cartProvider");
     return ctx;
 }

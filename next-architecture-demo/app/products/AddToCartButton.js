@@ -2,9 +2,9 @@
 import { useCart } from "../CartContext";
 
 export default function AddToCartButton({product}){
-    const {addItem} = useCart();
+    const {addToCart} = useCart();
     return(
-        <button onClick={() => addItem(product)}>
+        <button onClick={() => addToCart(product)}>
             Add Item To Products
         </button>
         
