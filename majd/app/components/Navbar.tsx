@@ -37,36 +37,47 @@ export default function Navbar() {
   }
 
   return (
-    React.createElement("nav", { className: getNavClass() },
-      React.createElement("div", { className: styles.container },
-        React.createElement(Link, { href: "#home", className: styles.logo },
-          React.createElement("span", { className: styles.logoDot }, "."),
-          "Majd"
-        ),
-        React.createElement("div", { className: getLinksClass() },
-          navLinks.map(function(link) {
-            return React.createElement(Link, {
-              key: link.name,
-              href: link.href,
-              className: styles.navLink,
-              onClick: function() { setMobileOpen(false); }
-            }, link.name);
-          }),
-          React.createElement(Link, {
-            href: "#contact",
-            className: styles.ctaBtn,
-            onClick: function() { setMobileOpen(false); }
-          }, "Let's Talk")
-        ),
-        React.createElement("button", {
-          className: styles.mobileToggle,
-          onClick: function() { setMobileOpen(!mobileOpen); },
-          "aria-label": "Toggle menu"
-        },
-          React.createElement("span", { className: getHamburgerClass() })
-        )
-      )
-    )
+    <nav className={getNavClass()}>
+      <div className={styles.container}>
+        {/* Logo */}
+        <Link href="#home" className={styles.logo}>
+          <span className={styles.logoDot}>.</span>
+          Majd
+        </Link>
+
+        {/* Navigation Links */}
+        <div className={getLinksClass()}>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={styles.navLink}
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          
+          {/* CTA Button */}
+          <Link
+            href="#contact"
+            className={styles.ctaBtn}
+            onClick={() => setMobileOpen(false)}
+          >
+            Let's Talk
+          </Link>
+        </div>
+
+        {/* Mobile Toggle Button */}
+        <button
+          className={styles.mobileToggle}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={getHamburgerClass()} />
+        </button>
+      </div>
+    </nav>
   );
 }
 
