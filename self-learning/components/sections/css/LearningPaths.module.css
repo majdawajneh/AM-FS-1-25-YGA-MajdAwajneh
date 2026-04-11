@@ -1,0 +1,173 @@
+.learningPaths {
+  padding: 140px 20px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.sectionTitle {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--white) 0%, var(--purple-primary) 100%);
+  -webkit-background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.pathsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+}
+
+.pathCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3.5rem 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.pathCard:hover {
+  transform: translateY(-12px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--purple-primary);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+}
+
+.pathHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.pathIcon {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: var(--gradient-purple);
+  color: var(--white);
+  flex-shrink: 0;
+  box-shadow: 0 15px 35px rgba(99, 91, 255, 0.4);
+}
+
+.pathTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pathMeta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+
+.stepItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.stepItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 3px;
+  height: calc(100% + 1rem);
+  background: var(--purple-primary);
+  border-radius: 2px;
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--purple-primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.stepText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.pathCta {
+  display: inline-block;
+  color: var(--purple-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 2px solid var(--purple-primary);
+  border-radius: 50px;
+  background: rgba(99, 91, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.pathCta:hover {
+  background: var(--purple-primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .pathsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .learningPaths {
+    padding: 100px 16px;
+  }
+  
+  .pathsGrid {
+    grid-template-columns: 1fr;
+  }
+}

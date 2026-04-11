@@ -44,7 +44,7 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
 }
 
@@ -66,7 +66,7 @@
   font-size: 1.5rem;
   font-weight: 800;
   color: white;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.2px;
 }
 
 .brandAccent {
@@ -96,11 +96,15 @@
 
 .navLink:hover {
   color: white;
-  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.98rem;
+  background: rgba(39, 27, 27, 0.1);
+  box-shadow: 0 5px 20px rgba(80, 80, 102, 0.4);
+  border-radius: 25px;
 }
 
-.navLink.active {
-  color: white;
+.navLink:active {
+  color: var(--midnight-blue-color);
+  background-color: white;
 }
 
 /* CTA Button */
@@ -215,7 +219,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .navLinks {
     display: none;
   }

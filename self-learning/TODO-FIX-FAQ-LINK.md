@@ -1,0 +1,1 @@
+# TODO: Fix FAQ.tsx Link Error - COMPLETE&#10;&#10;## Steps:&#10;1. [x] Add Link import to FAQ.tsx&#10;2. [x] Create app/apply/page.tsx&#10;3. [x] Test navigation and ESLint&#10;&#10;FAQ Link error fixed. /apply route created with full apply form. Both FAQ and CTA Links now work perfectly.

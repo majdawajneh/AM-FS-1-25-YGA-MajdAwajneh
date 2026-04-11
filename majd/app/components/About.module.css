@@ -1,0 +1,288 @@
+.about {
+  padding: 120px 0;
+  background: var(--dark-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196, 129, 54, 0.3), transparent);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.imageSection {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1510 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(196, 129, 54, 0.2);
+}
+
+.initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 120px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c48136 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.experienceBadge {
+  position: absolute;
+  bottom: 30px;
+  right: -20px;
+  background: linear-gradient(135deg, #c48136 0%, #d4af37 100%);
+  padding: 20px 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 15px 40px rgba(196, 129, 54, 0.4);
+}
+
+.badgeNumber {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.badgeText {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.decoration {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(196, 129, 54, 0.3);
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.content {
+  padding: 20px 0;
+}
+
+.label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--main-color);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--text-light);
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.description {
+  font-size: 17px;
+  color: var(--text-light-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.skills {
+  margin: 35px 0;
+}
+
+.skillsTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skillTag {
+  padding: 10px 20px;
+  background: rgba(196, 129, 54, 0.1);
+  border: 1px solid rgba(196, 129, 54, 0.2);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.skillTag:hover {
+  background: rgba(196, 129, 54, 0.2);
+  border-color: var(--main-color);
+  transform: translateY(-2px);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  background: linear-gradient(135deg, #c48136 0%, #d4af37 100%);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  margin-top: 20px;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(196, 129, 54, 0.4);
+}
+
+.statsSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.statCard {
+  background: var(--dark-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(196, 129, 54, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.statNumber {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c48136 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .imageWrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .statsSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .experienceBadge {
+    right: 10px;
+    bottom: 10px;
+    padding: 15px 20px;
+  }
+
+  .badgeNumber {
+    font-size: 28px;
+  }
+
+  .statsSection {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .statCard {
+    padding: 30px 20px;
+  }
+
+  .statNumber {
+    font-size: 40px;
+  }
+}
+

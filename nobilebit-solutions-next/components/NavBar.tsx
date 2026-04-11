@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./css/NavBar.module.css";
+// import CV from "../public/Assets/Docs/Majd's new resume.pdf";
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +13,6 @@ export default function NavBar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -21,7 +21,8 @@ export default function NavBar() {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#gallery", label: "Portfolio" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "/Assets/Docs/Majd's%20new%20resume.pdf", target: "_blank", label: "Portfolio" },
     { href: "#pricing", label: "Pricing" },
     { href: "#ourclientsid", label: "Clients" },
     { href: "#FAQ-section", label: "FAQ" },
@@ -40,11 +41,23 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <div className={styles.navLinks}>
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={styles.navLink}>
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.target === "_blank" ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className={styles.navLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.href} href={link.href} className={styles.navLink}>
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
 
         {/* CTA Button */}
@@ -63,20 +76,34 @@ export default function NavBar() {
           <span></span>
           <span></span>
           <span></span>
+          
         </button>
 
         {/* Mobile Menu */}
         <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ""}`}>
-          {navLinks.map((link) => (
-            <Link 
-              key={link.href} 
-              href={link.href} 
-              className={styles.mobileLink}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.target === "_blank" ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className={styles.mobileLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={styles.mobileLink}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <Link 
             href="/contact" 
             className={styles.mobileCta}

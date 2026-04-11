@@ -11,8 +11,7 @@ interface Feature {
 }
 
 const features: Feature[] = [
-  {
-    icon: "fa-laptop-code",
+  { icon: "fa-laptop-code",
     number: "1",
     title: "Great Designs",
     description: "We design perfect websites that capture your brand identity and engage your audience with stunning visuals."
